@@ -16,10 +16,12 @@ const Navegation = () => {
 headerShown: false,
 }}
 tabBar={(props) => <MyTabBar {...props} />}>
+
 <Tab.Screen name="Inicio" component={Inicio} />
 <Tab.Screen name="Agregar" component={Agregar} />
 <Tab.Screen name="Editar" component={Editar} />
 <Tab.Screen name="Usuarios" component={Usuarios} />
+
 </Tab.Navigator>
 </NavigationContainer>
   )

@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 
 import { HttpClient } from "../services/http.service";
 import { ListPrestamoResponse } from "../interfaces/index";
+import axios from 'axios';
 
 const client = new HttpClient
 const Usuarios = () => {
+
     const [prestamos, setPrestamo] = useState<ListPrestamoResponse>({
         data: [],
         metadata:{
@@ -16,8 +18,10 @@ const Usuarios = () => {
     
       });
       const getPrestamos = async () => {
-        const response = await client.get<ListPrestamoResponse>("prestamos");
+        const response = await client.get<ListPrestamoResponse>('prestamos');
         setPrestamo(response);
+        console.log(response)
+        
       };
     
       useEffect(() => {
